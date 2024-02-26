@@ -9,7 +9,7 @@ main = Blueprint('main', __name__, template_folder='templates')
 #     return render_template('home.html')
 
 # target_time = datetime.datetime(2024, 2, 29, 15, 0, 0)
-target_time = datetime.datetime(2024, 2, 26, 21, 32, 20)
+target_time = datetime.datetime(2024, 2, 26, 22, 2, 0)
 
 @main.route('/')
 def index():
