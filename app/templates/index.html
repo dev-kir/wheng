@@ -113,6 +113,7 @@
             dataType: 'json',
             success: function(data){
 
+                // make sure semua kosong baru proceed, baiki balik esk
                 if(data.seconds <= 0){
                     window.location.href = '/done';
                 }
