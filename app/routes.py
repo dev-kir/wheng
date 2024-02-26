@@ -9,7 +9,7 @@ main = Blueprint('main', __name__, template_folder='templates')
 #     return render_template('home.html')
 
 # target_time = datetime.datetime(2024, 2, 29, 15, 0, 0)
-target_time = datetime.datetime(2024, 2, 27, 15, 8, 30)
+target_time = datetime.datetime(2024, 2, 27, 11, 8, 30)
 
 
 @main.context_processor
