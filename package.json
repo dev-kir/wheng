@@ -1,0 +1,21 @@
+{
+  "name": "wheng",
+  "version": "1.0.0",
+  "description": "this is a mini application to generate four last number of Malaysian identity card according to gender.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "postcss app/static/css/styles.css -o app/static/css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.35"
+  }
+}

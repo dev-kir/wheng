@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guessic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-KdoK+1Aq5Fdxtnf4jW17oMVoOU1A6eVcU/IJMp6JhjPFiX2uQqD5LzRiIxJL6DvZjr+8vRgJvUfl+Xt4p5V7pA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+    {% block script %}{% endblock %}
+</html>
