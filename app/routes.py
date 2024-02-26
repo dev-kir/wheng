@@ -9,7 +9,17 @@ main = Blueprint('main', __name__, template_folder='templates')
 #     return render_template('home.html')
 
 # target_time = datetime.datetime(2024, 2, 29, 15, 0, 0)
-target_time = datetime.datetime(2024, 2, 26, 21, 0, 0)
+target_time = datetime.datetime(2024, 2, 27, 15, 8, 30)
+
+
+@main.context_processor
+def var():
+    event_description = "you're noob"
+    event_congratulations = "thank you, noob"
+    return dict(
+        event_description = event_description,
+        event_congratulations = event_congratulations
+    )
 
 @main.route('/')
 def index():
@@ -35,7 +45,14 @@ def get_remaining_time():
 
 @main.route('/done')
 def done():
-    return render_template('done.html')
+    current_time = datetime.datetime.now()
+    remaining_time = target_time - current_time
+    remaining_seconds = max(remaining_time.total_seconds(), 0)
+
+    if remaining_seconds <= 0:
+        return render_template('done.html')
+    else:
+        return redirect(url_for('main.index'))
 
 @main.route('/test')
 def test():
