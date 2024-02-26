@@ -43,10 +43,10 @@
 
     <div class="flex flex-col justify-center items-center">
         <div class="w-96 flex items-center justify-center">
-            <p class="text-4xl font-bold font-serif text-center mt-10 text-teal-50">.</p>
+            <p class="text-4xl font-bold font-serif text-center mt-10 text-cyan-900 animate-pulse">CONGRATS</p>
         </div>
     </div>
-    
+
     <div class="flex flex-col flex-grow justify-center items-center w-screen">
         <div class="w-11/12 p-6 shadow-lg bg-teal-50 h-64 rounded-3xl mx-auto max-w-7xl mb-20">
             <div class="flex justify-between gap-4">
@@ -92,51 +92,4 @@
         </div>
     </footer>
 </div>
-{% endblock %}
-
-{% block script %}
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const button = document.querySelector('[data-collapse-toggle="navbar-default"]');
-        const menu = document.getElementById('navbar-default');
-
-        button.addEventListener('click', function () {
-            menu.classList.toggle('hidden');
-        });
-    });
-
-    function updateTimer(){
-        $.ajax({
-            url: '/get_remaining_time',
-            method: 'GET',
-            dataType: 'json',
-            success: function(data){
-
-                if(data.seconds <= 0){
-                    window.location.href = '/done';
-                }
-
-                document.getElementById('days').innerHTML =`
-                    <p>${data.days}<p>
-                `;
-                document.getElementById('hours').innerHTML =`
-                    <p>${data.hours}<p>
-                `;
-                document.getElementById('minutes').innerHTML =`
-                    <p>${data.minutes}<p>
-                `;
-                document.getElementById('seconds').innerHTML =`
-                    <p>${data.seconds}<p>
-                `;
-            },
-            error: function (error){
-                console.error('Error fetching data:', error);
-            }
-        });
-    }
-
-    setInterval(updateTimer, 1000);
-    updateTimer();
-</script>
 {% endblock %}
